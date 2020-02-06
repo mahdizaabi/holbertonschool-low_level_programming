@@ -4,7 +4,7 @@
  * main - main function
  * Description:printinggg single digits numbers of base 10 starting from 01
  * Return: 0
- *sdssssssdssdsdsdsds*/
+ */
 
 int main(void)
 {
