@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Printing possible combinations of three digits.
  * Return: Always 0.
@@ -7,7 +6,7 @@
 int main(void)
 {
 	int d1;
-        int d2; 
+        int d2;
         int d3;
 
 	for (d1 = 0; d1 < 8; d1++)
@@ -21,8 +20,8 @@ int main(void)
 				putchar((d3 % 10) + '0');
 
 				if (d1 == 7 && d2 == 8 && d3 == 9)
-					continue;
-				
+					break;
+
 				putchar(',');
 				putchar(' ');
 			}
