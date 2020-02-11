@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * int _abs(int) - Computing the absolut value of an given number.
- * @n: The variable Input
+ * _abs - Computing the absolut value of an given number.
+ * @int: The variable Input
  *
  * Return: 1 if n positive,
  *         0 if n equal to zero,
