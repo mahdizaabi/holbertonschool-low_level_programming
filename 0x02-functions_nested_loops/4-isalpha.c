@@ -1,15 +1,14 @@
 #include "holberton.h"
 
 /**
-* main - function to check for lowercase and uppercase character
-*@i - print alphbet
+* _isalpha - function to check for lowercase and uppercase character
+* @c : alphabet
 *Return: 1 if c is lowercase,letter,uppercase, otherwise 0
 */
-int main(void)
+int _isalpha(int c)
 {
-	int = i;
 
-	if (i >= 'a' && i <= 'z' || i >= 'A' && i <= 'Z')
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 
 		return (1);
 
