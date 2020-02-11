@@ -2,12 +2,11 @@
 
 /**
 *_islower - function to check for lowercase character
-*
+*@i: print alphbet
 *Return: 1 if c is lowercase, otherwise 0
 */
 
 int _islower(int i)
-
 {
 
 	if (i >= 'a' && i <= 'z')
