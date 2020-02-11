@@ -8,15 +8,16 @@
  */
 int main(void)
 {
-	int i, f1 = 0, f2 = 1, sum;
+	int i;
+	unsigned long f1 = 0, f2 = 1, s;
 
 	for (i = 0; i < 50; i++)
 	{
-		sum = f1 + f2;
-		printf("d%", sum);
+		s = f1 + f2;
+		printf("d%", s);
 
 		f1 = f2;
-		f2 = sum;
+		f2 = s;
 
 		if (count == 49)
 			printf("\n");
