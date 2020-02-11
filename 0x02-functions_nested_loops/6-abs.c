@@ -8,11 +8,10 @@
  *         -n if n negative,
  *
  */
-int _abs(int)
+int _abs(int n)
 {
-	if (n < 0)
-	{
-		return ((-1) * n);
-	}
-	return (n);
+if (n >= 0)
+return (n);
+else
+return (-n);
 }
