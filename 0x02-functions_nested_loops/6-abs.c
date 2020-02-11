@@ -2,7 +2,7 @@
 
 /**
  * _abs - Computing the absolut value of an given number.
- * @int: The variable Input
+ * @n: The variable Input
  *
  * Return: n if n positive,
  *         -n if n negative,
