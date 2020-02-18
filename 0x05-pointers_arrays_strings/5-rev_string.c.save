@@ -1,0 +1,12 @@
+/**
+ * Project : Thinks in reverse
+ * Author : Mahdi Zaabi
+ *
+ */
+#include "holberton.h"
+void rev_string(char *s);
+{
+	char s,j;
+	int i,k;
+		while ((*s+i))
+
