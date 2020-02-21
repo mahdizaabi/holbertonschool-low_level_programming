@@ -1,26 +1,24 @@
 #include "holberton.h"
 /**
- * leet - a function that capitalizes all words of a string.
- * @a: pointer char
- * Return: pointer
+ * leet - a function that encodes a string into 1337.
+ * @s: string.
+ * Return: s.
  */
-
-char *leet(char *a)
+char *leet(char *s)
 {
-	int i = 0, int j;
-	char c[] = "aAeEoOtTlL", char r[] = "4433007711";
+	int i, j;
+	char a[] = "aAeElLoOtT";
+	char p[] = "4433110077";
 
-	while (a[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-	for (j = 0; c[j] != '\0'; j++)
+		for (j = 0; j <= 9; j++)
 	{
-	if (a[i] == c[j])
+			if (s[i] == a[j])
 	{
-		a[i] = r[j];
-		break;
+			s[i] = p[j];
 	}
 	}
-		i++;
 	}
-	return (a);
+	return (s);
 }
