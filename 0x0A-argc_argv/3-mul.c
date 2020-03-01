@@ -3,7 +3,7 @@
 #include "holberton.h"
 
 /**
- * main - a program that prints all arguments it receives.
+ * main - Write a program that multiplies two numbers.
  * @argc: size of argv.
  * @argv: a pointer to an array containing the program line arguments.
  * Return: 0.
