@@ -1,26 +1,32 @@
 #include "holberton.h"
 /**
- * *rot13 - encoding a string to integer.
- * @s: pointer.
- * Return: z.
+ * *rot13 - function that encodes a string using rot13.
+ * @s: pointer pointed to the variable s , of type character
+ * Return: Pointer P , pointed to the variable s of type char.
+ * Update V2.0 : using Pointers instead of arrays to minimize the use
+ * of allocated memory and to improve the esthetic and simplicity of the code.
  */
 char *rot13(char *s)
 {
-	int i = 0, j = 0;
-	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char t[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+int i;
+char *p = s;
 
-	while (s[i] != '\0')
+char *original = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char *code = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+while (*s != '\0')
+{
+	i = 0;
+	while (i < 53)
 	{
-		for (j = 0; j <= 51; j++)
+		if (*s == original[i])
 	{
-			if (s[i] == a[j])
-	{
-				s[i] = t[j];
-					break;
-	}
+			*s = code[i];
+				break;
 	}
 		i++;
 	}
-	return (s);
+		s++;
 	}
+return (p);
+}
