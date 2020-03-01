@@ -3,10 +3,10 @@
 #include "holberton.h"
 
 /**
- * main - display the result of argv[1] * argv[2]
- * @argc: size of argv
- * @argv: array containing the program command line arguments
- * Return: always 0
+ * main - a program that prints all arguments it receives.
+ * @argc: size of argv.
+ * @argv: a pointer to an array containing the program line arguments.
+ * Return: 0.
  */
 int main(int argc, char *argv[])
 {
