@@ -4,7 +4,7 @@
  * _strchr - locates a character in a string .
  * @s: string to check
  * @c: character to found
- * UPDATE V1.0 : Features : Pointers implentation instead of Arrays .
+ * UPDATE V1.0 : Features : Pointers implementation instead of Arrays .
  * Pointer/memory incrementation instead of i .
  * Return: pointer to s or null
  */
