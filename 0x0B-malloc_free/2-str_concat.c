@@ -15,7 +15,6 @@ int size2 = 0;
 int i, j;
 char *p;
 
-
 if (s1 == NULL)
 	s1 = "";
 if (s2 == NULL)
@@ -33,25 +32,21 @@ p = malloc((size1 + size2) + 1);
 
 if (p == NULL)
 	return (NULL);
-/* i initialization */
 i = 0;
-
 /* copying the first string on the allocated memory*/
 while (i < size1)
-	{
-		*(p + i) = *(s1 + i);
-		i++;
-	}
+{
+	*(p + i) = *(s1 + i);
+			i++;
+}
 
 /* copying the second string */
-/* j intilaization*/
-
 j = 0;
 while (j <= size2)
-	{
-		*(p + j + size1) = *(s2 + j);
+{
+	*(p + j + size1) = *(s2 + j);
 		j++;
-	}
-/* the program return a pointer pointed to the memoery area allocation*/
-	return (p);
+}
+/* the program return a pointer pointed */
+return (p);
 }
