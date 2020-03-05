@@ -16,12 +16,16 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 	l = max - min + 1;
+/* dynamic memory space allocation */
 	mem = malloc(sizeof(int) * l);
+/* memory allocation fail exit */
 	if (mem == NULL)
 		return (NULL);
+/*filling the array with numbers from min to max */
 	for (i = min; i <= max; i++)
 	{
 		mem[i - min] = i;
 	}
+
 	return (mem);
 }
