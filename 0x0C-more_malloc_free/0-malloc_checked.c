@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include <limits.h>
 /**
- *malloc_checked - function
- *@b: int
- *Return: void
+ *malloc_checked - unction that allocates memory using malloc.
+ *@b: unsigned int
+ *Return: VOID Pointer
  */
 void *malloc_checked(unsigned int b)
 {
-/* We don't know exactly the type of bytes that will*/
-/*occupy the allocated memory so we use VOID type pointer*/
+/* We don't know the type of bytes that will*/
+/*occupy the allocated memory so we use VOID pointer type */
 	void *pointer;
 
 /* Dynamic memory allocation using malloc function */
