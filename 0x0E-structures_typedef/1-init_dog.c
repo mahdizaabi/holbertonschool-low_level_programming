@@ -11,10 +11,13 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	/* check if the pointer is not NULL */
 	if (d != 0)
 	{
+		/* variables intializations using two ways of notation */
 		(*d).name = name;
 		(*d).age = age;
 		d->owner = owner;
 	}
+	/* Void function , no need for return */
 }
