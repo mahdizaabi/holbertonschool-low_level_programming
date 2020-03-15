@@ -52,7 +52,7 @@ void print_string(va_list arg_variables)
 void print_all(const char * const format, ...)
 {
 	int i;
-	int j = 0;
+	int j;
 	char *sep = "";
 	va_list arg_variables;
 	variable_type type[] = {
@@ -62,10 +62,11 @@ void print_all(const char * const format, ...)
 	{"s", print_string},
 	{NULL, NULL} };
 	va_start(arg_variables, format);
-
+	j = 0;
 	while (format && format[j])
 	{
-		for (i = 0; type[i].character; i++)
+	i = 0;
+		while (type[i].character)
 		{
 			if (format[j] == *(type[i].character))
 			{
@@ -74,6 +75,7 @@ void print_all(const char * const format, ...)
 						sep = ", ";
 							break;
 			}
+		i++;
 		}
 		j++;
 	}
