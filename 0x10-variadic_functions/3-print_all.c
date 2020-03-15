@@ -71,7 +71,7 @@ void print_all(const char * const format, ...)
 	i = 0;
 		while (type[i].character)
 		{
-			if (format[j] == *(type[i].character))
+			if (*(format + j) == *(type[i].character))
 			{
 				printf("%s", sep);
 					(type[i].print_func)(arg_variables);
