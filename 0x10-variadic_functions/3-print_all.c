@@ -72,7 +72,7 @@ void print_all(const char * const format, ...)
 				printf("%s", sep);
 					(type[i].print_func)(arg_variables);
 						sep = ", ";
-							/*break;*/
+							break;
 			}
 		}
 		j++;
