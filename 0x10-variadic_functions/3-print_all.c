@@ -7,7 +7,7 @@
  * @arg_variables: list of arguments.
  * Return: void
  */
-void print_char(va_list arg_variables)
+void printf_c(va_list arg_variables)
 {
 	printf("%c", va_arg(arg_variables, int));
 }
@@ -16,7 +16,7 @@ void print_char(va_list arg_variables)
  * @arg_variables: arguments
  * Return: void
  */
-void print_integer(va_list arg_variables)
+void printf_i(va_list arg_variables)
 {
 	printf("%i", va_arg(arg_variables, int));
 }
@@ -25,7 +25,7 @@ void print_integer(va_list arg_variables)
  *
  * @arg_variables: list of arguments.
  */
-void print_float(va_list arg_variables)
+void printf_f(va_list arg_variables)
 {
 	printf("%f", va_arg(arg_variables, double));
 }
@@ -34,7 +34,7 @@ void print_float(va_list arg_variables)
  * @arg_variables: arguments
  * Return: void
  */
-void print_string(va_list arg_variables)
+void printf_s(va_list arg_variables)
 {
 	char *p;
 
@@ -51,30 +51,30 @@ void print_string(va_list arg_variables)
  */
 void print_all(const char * const format, ...)
 {
-	int i;
-	int j;
+	int i = 0;
+	int j = 0;
 	char *sep = "";
 	va_list arg_variables;
 	/*Array of struct containing the different variable types accepted*/
-	variable_type type[] = {
-	{"c", print_char},
-	{"i", print_integer},
-	{"f", print_float},
-	{"s", print_string},
+	variable_type var[] = {
+	{"c", printf_c},
+	{"i", printf_i},
+	{"f", printf_f},
+	{"s", printf_s},
 	{NULL, NULL} };
 	/*Init arg list to retrieve the add arguments after parameter format*/
 	va_start(arg_variables, format);
-	j = 0;
 	/*test if both pointer and string different than NULL*/
+	j = 0;
 	while (format && format[j])
 	{
-	i = 0;
-		while (type[i].character)
+		i = 0;
+		while (var[i].character)
 		{
-			if (*(format + j) == *(type[i].character))
+			if (*(format + j) == *(var[i].character))
 			{
 				printf("%s", sep);
-					(type[i].print_func)(arg_variables);
+					(var[i].printf)(arg_variables);
 						sep = ", ";
 							break;
 			}
