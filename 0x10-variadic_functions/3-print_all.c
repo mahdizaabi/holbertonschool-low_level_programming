@@ -4,7 +4,7 @@
 #include <stdlib.h>
 /**
  * print_char - print a character.
- * @arg: argument
+ * @arg_variables: argument
  * Return: void
  */
 void print_char(va_list arg_variables)
@@ -13,7 +13,7 @@ void print_char(va_list arg_variables)
 }
 /**
  * print_integer - print an integer.
- * @arg: argument
+ * @arg_variables: argument
  * Return: void
  */
 void print_integer(va_list arg_variables)
@@ -23,7 +23,7 @@ void print_integer(va_list arg_variables)
 /**
  * print_float - print a float.
  *
- * @arg: list of argements.
+ * @arg_variables: list of argements.
  */
 void print_float(va_list arg_variables)
 {
@@ -31,7 +31,7 @@ void print_float(va_list arg_variables)
 }
 /**
  * print_string - print a string.
- * @arg: argement
+ * @arg_variables: argement
  * Return: void
  */
 void print_string(va_list arg_variables)
@@ -46,7 +46,7 @@ void print_string(va_list arg_variables)
 }
 /**
  * print_all - prints all.
- * @format: list of the format
+ * @format: last argument.
  * Return: void
  */
 void print_all(const char * const format, ...)
