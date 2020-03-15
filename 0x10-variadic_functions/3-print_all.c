@@ -4,7 +4,7 @@
 #include <stdlib.h>
 /**
  * print_char - print a character.
- * @arg_variables: argument
+ * @arg_variables: list of arguments.
  * Return: void
  */
 void print_char(va_list arg_variables)
@@ -13,7 +13,7 @@ void print_char(va_list arg_variables)
 }
 /**
  * print_integer - print an integer.
- * @arg_variables: argument
+ * @arg_variables: arguments
  * Return: void
  */
 void print_integer(va_list arg_variables)
@@ -23,7 +23,7 @@ void print_integer(va_list arg_variables)
 /**
  * print_float - print a float.
  *
- * @arg_variables: list of argements.
+ * @arg_variables: list of arguments.
  */
 void print_float(va_list arg_variables)
 {
@@ -31,7 +31,7 @@ void print_float(va_list arg_variables)
 }
 /**
  * print_string - print a string.
- * @arg_variables: argement
+ * @arg_variables: arguments
  * Return: void
  */
 void print_string(va_list arg_variables)
@@ -55,14 +55,17 @@ void print_all(const char * const format, ...)
 	int j;
 	char *sep = "";
 	va_list arg_variables;
+	/*Array of struct containing the different variable types accepted*/
 	variable_type type[] = {
 	{"c", print_char},
 	{"i", print_integer},
 	{"f", print_float},
 	{"s", print_string},
 	{NULL, NULL} };
+	/*Init arg list to retrieve the add arguments after parameter format*/
 	va_start(arg_variables, format);
 	j = 0;
+	/*test if both pointer and string different than NULL*/
 	while (format && format[j])
 	{
 	i = 0;
