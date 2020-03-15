@@ -1,5 +1,5 @@
-#ifndef _VAR_H_
-#define _VAR_H_
+#ifndef _VARIADIC_FUNCTION_H_
+#define _VARIADIC_FUNCTION_H_
 #include <stdarg.h>
 
 struct type
