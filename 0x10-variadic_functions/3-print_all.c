@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 /**
- * print_char - print a character.
+ * printf_c - print a character.
  * @arg_variables: list of arguments.
  * Return: void
  */
@@ -12,7 +12,7 @@ void printf_c(va_list arg_variables)
 	printf("%c", va_arg(arg_variables, int));
 }
 /**
- * print_integer - print an integer.
+ * printf_i - print an integer.
  * @arg_variables: arguments
  * Return: void
  */
@@ -21,7 +21,7 @@ void printf_i(va_list arg_variables)
 	printf("%i", va_arg(arg_variables, int));
 }
 /**
- * print_float - print a float.
+ * printf_f - print a float.
  *
  * @arg_variables: list of arguments.
  */
@@ -30,7 +30,7 @@ void printf_f(va_list arg_variables)
 	printf("%f", va_arg(arg_variables, double));
 }
 /**
- * print_string - print a string.
+ * printf_s - print a string.
  * @arg_variables: arguments
  * Return: void
  */
