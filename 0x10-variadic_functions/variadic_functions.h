@@ -5,7 +5,7 @@
 struct type
 {
 char *character;
-void (*print_func)(va_list);
+void (*printf)(va_list);
 };
 typedef struct type variable_type;
 
