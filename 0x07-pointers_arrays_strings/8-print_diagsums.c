@@ -22,6 +22,6 @@ void print_diagsums(int *a, int size)
 	/* setting the parameters of the pointer adresse memory */
 		a = *(a + (j * size) + (size - 1 - j));
 	}
-	printf("%i, %i\n", l, r);
+	printf("%i, %i\n", m, a);
 }
 
