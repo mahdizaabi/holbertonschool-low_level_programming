@@ -10,7 +10,8 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, p, m = 0, a = 0;
+	int i, j;
+	int m = 0, n = 0;
 
 	/*access to the elements through the pointer Adress */
 	for (i = 0; i < size; i++)
@@ -20,8 +21,8 @@ void print_diagsums(int *a, int size)
 	for (j = 0; j < size; j++)
 	{
 	/* setting the parameters of the pointer adresse memory */
-		a = *(a + (j * size) + (size - 1 - j));
+		n = *(a + (j * size) + (size - 1 - j));
 	}
-	printf("%i, %i\n", m, a);
+	printf("%i, %i\n", m, n);
 }
 
