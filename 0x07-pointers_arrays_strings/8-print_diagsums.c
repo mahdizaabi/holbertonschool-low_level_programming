@@ -8,21 +8,22 @@
  *
  * Return: void
  */
+
 void print_diagsums(int *a, int size)
 {
 	int i, j;
-	int m = 0, n = 0;
+	int c = 0;
+	int d = 0;
 
-	/*access to the elements through the pointer Adress */
 	for (i = 0; i < size; i++)
 	{
-		m += *(a + (i * size) + i);
+		c = c + *(a + i * sizeof(int));
 	}
-	for (j = 0; j < size; j++)
-	{
-	/* setting the parameters of the pointer adresse memory */
-		n = *(a + (j * size) + (size - 1 - j));
-	}
-	printf("%i, %i\n", m, n);
-}
 
+	for (j = 0; j < size; j++)
+
+	{
+		d = d + *(a + (size * j) + (size - j - 1));
+	}
+	printf("%d, %d\n", c, d);
+}
