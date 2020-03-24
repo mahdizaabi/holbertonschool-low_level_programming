@@ -1,7 +1,7 @@
 [B#include "lists.h"
 
 /**
- *delete_nodeint_at_index - function that deletes the node at index index of a listint_t linked list.
+ *delete_nodeint_at_index - index of a listint_t linked list.
  *@head: pointer to the frist element of the list
  *@index: index of the deleted node .
  *Return: 1 or -1
