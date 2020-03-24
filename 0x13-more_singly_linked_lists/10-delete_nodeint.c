@@ -1,4 +1,4 @@
-#include "lists.h"
+[B#include "lists.h"
 
 /**
  *delete_nodeint_at_index - function that deletes the node at index index of a listint_t linked list.
@@ -10,12 +10,13 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int i = 0;
 	listint_t *tmp = NULL;
-	int *node = *head;
+	listint_t *node;
+	*node = *head;
 
-	if ((*head) == NULL)
+	if (!*head)
 		return (-1);
 
-	if (index == 0)
+	if (!index)
 	{
 		tmp = node->next;
 		free(node);
