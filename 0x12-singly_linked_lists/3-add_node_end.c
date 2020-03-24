@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
 #include "lists.h"
 /**
  * _strlen - determines the string length
@@ -29,6 +27,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *tmp;
 	tmp = *head;
 
+	if (!str)
+		return (NULL);
+
 	/* nod memeorty allocation */
 	new_node = malloc(sizeof(list_t));
 
@@ -52,7 +53,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	/* searcing for n-1 last element of the list where to point */
 	while (tmp->next)
+	{
 		tmp = tmp->next;
 	tmp->next = new_node;
+	}
 	return (new_node);
 }
