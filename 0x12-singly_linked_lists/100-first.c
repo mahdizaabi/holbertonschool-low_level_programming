@@ -3,7 +3,7 @@
 void first(void) __attribute__ ((constructor));
 
 /**
- * first - print a test before main 
+ * first - print a test before main.
  *
  * Return: void
  */
