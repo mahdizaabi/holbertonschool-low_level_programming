@@ -27,14 +27,15 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node;
 	list_t *tmp;
-
 	tmp = *head;
+
 	/* nod memeorty allocation */
 	new_node = malloc(sizeof(list_t));
 
 	if (new_node == NULL)
 		return (NULL);
 	/* Nod creation and initialization */
+	new_node->next = NULL;
 	new_node->str = strdup(str);
 	/* check memory allocation for strdup */
 	if (new_node->str == NULL)
@@ -42,8 +43,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new_node);
 		return (NULL);
 	}
-	new_node->len = _strlen(new_node->str);
-	new_node->next = NULL;
+	new_node->len = _strlen(str);
 	/* checking if there is more than 2 elements(list exist) */
 	if (*head == NULL)
 	{
@@ -51,7 +51,6 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (new_node);
 	}
 	/* searcing for n-1 last element of the list where to point */
-	tmp = *head;
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new_node;
