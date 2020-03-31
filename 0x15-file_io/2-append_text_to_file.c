@@ -6,17 +6,20 @@
 
 /**
  * _strlen - finds the length of a string
- * @str: pointer to the string
+ * @s : pointer to the string
  *
  * Return: length of the string
  */
-size_t _strlen(char *s)
+int _strlen(char *s)
 {
-	size_t len;
+	int length = 0;
 
-	for (i = 0; s[len]; i++)
-		;
-	return (len);
+	while (s[length])
+	{
+		length++;
+	}
+
+	return (length);
 }
 
 /**
