@@ -10,11 +10,11 @@
  *
  * Return: length of the string
  */
-size_t _strlen(char *str)
+size_t _strlen(char *s)
 {
 	size_t len;
 
-	for (i = 0; str[len]; i++)
+	for (i = 0; s[len]; i++)
 		;
 	return (len);
 }
