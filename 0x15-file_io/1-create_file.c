@@ -6,8 +6,8 @@
 #include <stdio.h>
 
 /**
- * _strlen - finds the length of a string
- * @str: pointer to the string
+ * _strlen - extracting the length of a string
+ * @s: pointer to the string
  *
  * Return: length of the string
  */
