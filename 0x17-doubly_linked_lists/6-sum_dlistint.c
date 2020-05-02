@@ -11,7 +11,7 @@ int sum_dlistint(dlistint_t *head)
 	dlistint_t *spiderman;
 
 	if (head == NULL)
-		return(0);
+		return (0);
 	spiderman = head;
 	while (spiderman->next)
 	{
