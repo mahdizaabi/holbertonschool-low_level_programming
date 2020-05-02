@@ -10,13 +10,11 @@ int sum_dlistint(dlistint_t *head)
 	int sum = 0;
 	dlistint_t *spiderman;
 
-	if (head == NULL)
-		return (0);
 	spiderman = head;
-	while (spiderman->next)
+	while (spiderman)
 	{
+		sum += spiderman->n;
 		spiderman = spiderman->next;
-		sum = sum + spiderman->n;
 	}
 
 	return (sum);
