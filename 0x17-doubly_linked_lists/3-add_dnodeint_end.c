@@ -8,7 +8,7 @@
 **/
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlisint_t *new, *fastandfurious;
+	dlistint_t *new, *fastandfurious;
 
 	if (head == NULL)
 		return (NULL);
@@ -16,7 +16,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	if (new == NULL)
 		return (NULL);
 	new->n = n;
-	new->next == NULL;
+	new->next = NULL;
 	if (*head == NULL)
 	{
 		new->prev = NULL;
@@ -24,7 +24,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		return (new);
 	}
 	fastandfurious = *head;
-	while (fastandfurious->new)
+	while (fastandfurious->next)
 		fastandfurious = fastandfurious->next;
 	fastandfurious->next = new;
 	new->prev = fastandfurious;
