@@ -5,6 +5,7 @@
  * @h: Head pointer to the first Node
  * @idx: given index
  * @n: data to be stored
+ * Return: pointer to the new node
 **/
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -14,7 +15,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *temp;
 	dlistint_t *cmp;
 	unsigned int i = 1;
-	unsigned int j = 1;
+	unsigned int j = 0;
 
 	if (h == NULL)
 		return (NULL);
@@ -37,7 +38,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	temp = *h;
 	new->n = n;
-	while (i < idx - 1)
+	while (i < idx)
 	{
 		temp = temp->next;
 		i++;
