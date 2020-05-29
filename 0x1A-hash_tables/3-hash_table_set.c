@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * noode_insert - function to insert new node
+ * node_insert - function to insert new node
  * @key: key entry
  * @value: value to store
  * Return: pointer to the newly created node
@@ -50,7 +50,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dups;
 
 
-	if (ht == NULL || key == NULL || value == NULL || ht->size == 0 )
+	if (ht == NULL || key == NULL || value == NULL || ht->size == 0)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
