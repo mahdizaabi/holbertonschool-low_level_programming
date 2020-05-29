@@ -5,6 +5,28 @@
  *
  *
 **/
+hash_node_t *node_insert(const char *key, const char *value)
+{
+	hash_node_t *ptonode;
+	char *dupk, *dupv;
+
+	ptonode = malloc(sizeof(hash_node_t));
+	if (ptonode == NULL)
+	{
+		return(NULL);
+	}
+	dupk = strdup(key);
+	dupv = strdup(value);
+	if (dupv == NULL || dupk == NULL)
+	{
+		free(ptonode);
+		return (NULL);
+	}
+	ptonode->key = dupk;
+	ptnode->value = dupv;
+	ptnode ->next = NULL;
+	return (ptonode);
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
