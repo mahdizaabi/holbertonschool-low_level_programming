@@ -63,7 +63,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			dups = strdup(value);
 			if (dups == NULL)
 				return (0);
-			free(temp->value);
+
 			temp->value = dups;
 
 			return (1);
