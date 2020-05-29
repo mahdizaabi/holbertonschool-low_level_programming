@@ -50,8 +50,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dups;
 
 
-	if (ht == NULL || ht->size == 0 || ht->array == NULL ||
-	    key == NULL || value == NULL || strlen(key) == 0)
+	if (ht == NULL || ht->size == 0 || key == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
@@ -72,16 +71,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		temp = temp->next;
 	}
-		ptonode = node_insert(key, value);
-		if (ptonode == NULL)
-			return (0);
-		if (ht->array[index] != NULL)
-		{
-			ptonode->next = ht->array[index];
-			ht->array[index] = ptonode;
-		}
-		else
-			ptonode->next = NULL;
-			ht->array[index] = ptonode;
+	ptonode = node_insert(key, value);
+	if (ptonode == NULL)
+		return (0);
+	if (ht->array[index] != NULL)
+	{
+		ptonode->next = ht->array[index];
+		ht->array[index] = ptonode;
+	}
+	else
+		ptonode->next = NULL;
+		ht->array[index] = ptonode;
 	return (1);
 }
