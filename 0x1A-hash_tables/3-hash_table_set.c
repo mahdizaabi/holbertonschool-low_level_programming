@@ -16,19 +16,13 @@ hash_node_t *node_insert(const char *key, const char *value)
 		return (NULL);
 	}
 	dupk = strdup(key);
-	if (dupk == NULL)
+	dupv = strdup(value);
+	if (dupk == NULL || dupv == NULL)
 	{
 		free(ptonode);
 		return (NULL);
 	}
 	ptonode->key = dupk;
-	dupv = strdup(value);
-	if (dupv == NULL)
-	{
-		free(ptonode->key);
-		free(ptonode);
-		return (NULL);
-	}
 	ptonode->value = dupv;
 	ptonode->next = NULL;
 	return (ptonode);
@@ -50,7 +44,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dups;
 
 
-	if (ht == NULL || key == NULL || value == NULL || ht->size == 0)
+	if (ht == NULL || key == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
