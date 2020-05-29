@@ -43,29 +43,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *temp;
 
 
-	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
-	    key == NULL || strlen(key) == 0 || value == NULL)
+	if (ht == NULL || ht->size == 0 || ht->array == NULL ||
+	    key == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
 	temp = ht->array[index];
-	if (temp != NULL)
-		while (temp != NULL)
-		{
-			if (strcmp(temp->key, key) == 0)
-			{
-				free(temp->value);
-				temp->value = strdup(value);
-				if (temp->value == NULL)
-				{
-					return (0);
-				}
-				return (1);
-			}
-			temp = temp->next;
-		}
-	else
+
+	while (temp != NULL && (temp->key != key))
 	{
+		if (strcmp(temp->key, key) == 0)
+		{
+			free(temp->value);
+			temp->value = strdup(value);
+			if (temp->value == NULL)
+				return (0);
+
+			return (1);
+
+		}
+		temp = temp->next;
+	}
 
 		ptonode = node_insert(key, value);
 		if (ptonode == NULL)
@@ -74,5 +72,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		ptonode->next = ht->array[index];
 		ht->array[index] = ptonode;
-	}	return(1);
+		return(1);
 }
