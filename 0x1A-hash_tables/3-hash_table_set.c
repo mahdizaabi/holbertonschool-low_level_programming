@@ -25,6 +25,8 @@ hash_node_t *node_insert(const char *key, const char *value)
 	ptonode->key = dupk;
 	ptonode->value = dupv;
 	ptonode->next = NULL;
+	free(dupk);
+	free(dupv);
 	return (ptonode);
 }
 /**
