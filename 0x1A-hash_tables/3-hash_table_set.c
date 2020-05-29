@@ -79,6 +79,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			ptonode->next = ht->array[index];
 			ht->array[index] = ptonode;
+			return(1);
 		}
 		else
 			ht->array[index] = ptonode;
