@@ -16,14 +16,18 @@ hash_node_t *node_insert(const char *key, const char *value)
 		return (NULL);
 	}
 	dupk = strdup(key);
-	dupv = strdup(value);
-	if (dupv == NULL || dupk == NULL)
+	if (dupk == NULL)
 	{
+		free(ptonode);
+		return(NULL);
+	}
+	dupv = strdup(value);
+	if (dupv == NULL)
+	{
+		free(ptonode->key);
 		free(ptonode);
 		return (NULL);
 	}
-	ptonode->key = dupk;
-	ptonode->value = dupv;
 	ptonode->next = NULL;
 	return (ptonode);
 }
