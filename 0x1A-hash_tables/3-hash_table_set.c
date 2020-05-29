@@ -19,7 +19,7 @@ hash_node_t *node_insert(const char *key, const char *value)
 	if (dupk == NULL)
 	{
 		free(ptonode);
-		return(NULL);
+		return (NULL);
 	}
 	ptonode->key = dupk;
 	dupv = strdup(value);
@@ -70,13 +70,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		temp = temp->next;
 	}
-
 		ptonode = node_insert(key, value);
 		if (ptonode == NULL)
-		{
 			return (0);
+		if (ht->array[index] != NULL)
+		{
+			ptonode->next = ht->array[index];
+			ht->array[index] = ptonode;
 		}
-		ptonode->next = ht->array[index];
-		ht->array[index] = ptonode;
-		return(1);
+		else
+			ptonode->next = NULL;
+			ht->array[index] = ptonode;
+	return (1);
 }
