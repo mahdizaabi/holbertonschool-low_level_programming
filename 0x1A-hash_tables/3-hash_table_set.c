@@ -21,6 +21,7 @@ hash_node_t *node_insert(const char *key, const char *value)
 		free(ptonode);
 		return(NULL);
 	}
+	ptonode->key = dupk;
 	dupv = strdup(value);
 	if (dupv == NULL)
 	{
@@ -28,6 +29,7 @@ hash_node_t *node_insert(const char *key, const char *value)
 		free(ptonode);
 		return (NULL);
 	}
+	ptonode->value = dupv;
 	ptonode->next = NULL;
 	return (ptonode);
 }
