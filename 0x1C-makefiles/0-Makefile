@@ -1,12 +1,2 @@
-CC=gcc
-CFLAGS=-W -Wall -ansi -pedantic
-LDFLAGS=
-EXEC=holberton
-
-all: $(EXEC)
-holberton: holberton.o main.o
-	$(CC) -o holberton holberton.o main.o $(LDFLAGS)
-holberton.o: holberton.c
-	$(CC) -o holberton.o -c holberton.c $(CFLAGS)
-main.o: main.c m.h
-	$(CC) -o main.o -c main.c $(CFLAGS)
+all:
+	gcc holberton.c main.c -o holberton
