@@ -18,7 +18,7 @@ int print(int *array, size_t p_before, size_t gap, size_t step, int value)
 
 	for (x = p_before - gap; x <= step; x++)
 	{
-		printf("Valuex checked array[%lu] = [%d]\n", x, array[x]);
+		printf("Value checked array[%lu] = [%d]\n", x, array[x]);
 		if (array[x] == value)
 			return (x);
 	}
