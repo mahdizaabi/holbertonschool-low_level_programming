@@ -1,0 +1,34 @@
+#include "search_algos.h"
+#include <stdio.h>
+#include <stdlib.h>
+int binarySearch(int *arr, size_t l, size_t r, int x) 
+{
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
+
+
+        if (arr[mid] == x)
+            return mid;
+
+        if (arr[mid] > x)
+            return (binarySearch(arr, l, mid - 1, x));
+
+        return (binarySearch(arr, mid + 1, r, x));
+    }
+
+
+    return -1;
+} 
+/**
+ * linear_search - search a value in an array
+ * @array: pointer to the first element of the array
+ * @value: value cto search for
+ * @size: size of the array
+ * Return: index of the value or -1 if element not found
+ */
+int binary_search(int *array, size_t size, int value)
+{
+
+
+	return(binarySearch(array, 0, size - 1, value));
+}
