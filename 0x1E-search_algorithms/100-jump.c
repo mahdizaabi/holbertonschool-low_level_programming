@@ -56,9 +56,7 @@ int jump_search(int *array, size_t size, int value)
 		}
 	}
 	if (value >= array[gap])
-	{
 		printf(found, p_before, step);
-	}
 	else
 	{
 		printf("Value found between indexes [0] and [%lu]\n", gap);
@@ -67,9 +65,10 @@ int jump_search(int *array, size_t size, int value)
 			printf(check, x, array[x]);
 			if (array[x] == value)
 				return (x);
+			else
+				return (-1);
 		}
 	}
 	return (print(array, p_before, step, value));
-
 	return (-1);
 }
