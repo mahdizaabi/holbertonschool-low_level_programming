@@ -5,20 +5,18 @@
 /**
  * print - search a value in an array
  * @array: pointer to the first element of the array
- * @p_before: index of the left side
- * @gap: index of the right side
+ * @p_before: index of the left sidey
  * @step: value to search for
- * @gap: value between one block
  * @value: value to search for
  * Return: index of the value or -1 if element not found
  */
-int print(int *array, size_t p_before, size_t gap, size_t step, int value)
+int print(int *array, size_t p_before, size_t step, int value)
 {
 	size_t x;
 
-	for (x = p_before - gap; x <= step; x++)
+	for (x = p_before; x <= step; x++)
 	{
-		printf("Valuex checked array[%lu] = [%d]\n", x, array[x]);
+		printf("Value checked array[%lu] = [%d]\n", x, array[x]);
 		if (array[x] == value)
 			return (x);
 	}
@@ -44,7 +42,7 @@ int jump_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 	printf(check, p_before, array[p_before]);
-	while (array[step] <= value && step <= size)
+	while (array[step] < value && step <= size)
 	{
 		if (array[step] != value)
 			printf(check, step, array[step]);
@@ -58,7 +56,9 @@ int jump_search(int *array, size_t size, int value)
 		}
 	}
 	if (value >= array[gap])
-		printf(found, p_before - gap, step - gap);
+	{
+		printf(found, p_before, step);
+	}
 	else
 	{
 		printf("Value found between indexes [0] and [%lu]\n", gap);
@@ -69,7 +69,7 @@ int jump_search(int *array, size_t size, int value)
 				return (x);
 		}
 	}
-	return (print(array, p_before, gap, step, value));
+	return (print(array, p_before, step, value));
 
 	return (-1);
 }
