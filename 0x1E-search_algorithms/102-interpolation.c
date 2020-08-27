@@ -29,7 +29,7 @@ int interpolation_search(int *array, size_t size, int value)
 				printf("Value checked array[%lu] = [%d]", l, array[l]);
 				return (l);
 			}
-			printf("Missing Edge Case !!!", l);
+			printf("Missing Edge Case !!!");
 			return (-1);
 		}
 		p = l + (((double)(h - l) / (array[h] - array[l])) * (value - array[l]));
