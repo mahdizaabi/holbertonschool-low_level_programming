@@ -23,7 +23,10 @@ int interpolation_search(int *array, size_t size, int value)
 		if (l == h)
 		{
 			if (array[l] == value)
+			{
+				printf("Value checked array[%lu] = [%d]", l, array[l]);
 				return (l);
+			}
 			return (-1);
 		}
 		p = l + (((double)(h - l) / (array[h] - array[l])) * (value - array[l]));
