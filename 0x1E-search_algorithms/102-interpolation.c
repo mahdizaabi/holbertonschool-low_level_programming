@@ -43,6 +43,7 @@ int interpolation_search(int *array, size_t size, int value)
 			h = p - 1;
 		}
 	}
+	p = l + (((double)(h - l) / (array[h] - array[l])) * (value - array[l]));
 	printf("Value checked array[%lu] is out of range\n", p);
 	return (-1);
 }
