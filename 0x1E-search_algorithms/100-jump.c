@@ -70,5 +70,4 @@ int jump_search(int *array, size_t size, int value)
 		}
 	}
 	return (print(array, p_before, step, value));
-	return (-1);
 }
